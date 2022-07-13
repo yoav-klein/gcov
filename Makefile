@@ -15,12 +15,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 app: $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@
 
-#main.c.gcov: app
-#	./app
-#	gcov *.c
+main.c.gcov: app
+	./app
+	gcov -o obj src/*.c
 
-#coverage: main.c.gcov	
+coverage: main.c.gcov	
 
 .PHONY: clean
 clean:
-	rm $(OBJ_DIR)/* *.gcda *.gcno */gcov
+	rm $(OBJ_DIR)/* *.gcda *.gcno *.gcov
