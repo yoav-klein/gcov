@@ -14,3 +14,10 @@ steps:
     mkdir obj
     make coverage
   displayName: 'make'
+- script: |
+    gcovr -x > output.xml
+  displayName: 'gcovr'
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: 'output.xml'
