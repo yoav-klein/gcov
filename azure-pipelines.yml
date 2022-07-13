@@ -15,6 +15,7 @@ steps:
     make coverage
   displayName: 'make'
 - script: |
+    sudo apt-get install gcovr
     gcovr -x > output.xml
   displayName: 'gcovr'
 - task: PublishCodeCoverageResults@1
