@@ -11,5 +11,6 @@ pool:
 
 steps:
 - script: |
+    mkdir obj
     make coverage
   displayName: 'make'
